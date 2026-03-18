@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { db } from '../firebase';
-import { collection, addDoc, doc, setDoc } from 'firebase/firestore';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+import { setDoc, doc } from 'firebase/firestore';
 import Layout from './Layout';
 import './Admin.css';
 
 function AdminCreateUser() {
-  const { currentUser, userRole } = useAuth();
+  const { currentUser } = useAuth();
   const [formData, setFormData] = useState({
     email: '',
     password: '',
